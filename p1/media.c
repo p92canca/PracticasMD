@@ -20,20 +20,27 @@
 #include <stdio.h>
 
 double media (double x, double y);
+void media_referencia (double x, double y, double *resultado);
 
 int main(){
 /* Declaración de variables locales */
-	double x,y;
+	double x,y,r;
 /* Introducimos valores */
 	printf("Introduce el valor de la 'x': ");
-	scanf("%f",&x);
+	scanf("%lf",&x);
 	printf("Introduce el valor de la 'y': ");
-	scanf("%f",&y);
+	scanf("%lf",&y);
 /* Comprobamos funciones */
-	printf("Resultado funcion media por valor: %f\n",media(x,y);
+	printf("Resultado funcion media por valor: %lf\n",media(x,y));
+	media_referencia(x,y,&r);
+	printf("Resultado funcion media por referencia: %lf\n",r);
 	return 0;
 }
 
 double media (double x, double y){
 	return (x+y)/2;
+}
+
+void media_referencia (double x, double y, double *resultado){
+	*resultado=(x+y)/2;
 }
